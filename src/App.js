@@ -1,4 +1,5 @@
 import { internalErrorConfig, notFoundConfig } from './configs';
+import ChatPage from './pages/Chat';
 import ErrorPage from './pages/Error';
 import SigninPage from './pages/Signin';
 import SignupPage from './pages/Signup';
@@ -8,6 +9,12 @@ const root = document.querySelector('#root');
 window.onload = function () {
   if (window.location.pathname === '/') {
     window.location.pathname = '/signin';
+  }
+
+  if (window.location.pathname === '/chat') {
+    const chatPage = new ChatPage();
+
+    root.innerHTML = chatPage.compile();
   }
 
   if (window.location.pathname === '/signin') {
