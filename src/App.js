@@ -1,8 +1,12 @@
-import { internalErrorConfig, notFoundConfig } from './configs';
+import {
+  internalErrorConfig,
+  notFoundConfig,
+  signinConfig,
+  signupConfig,
+} from './configs';
 import ChatPage from './pages/Chat';
 import ErrorPage from './pages/Error';
-import SigninPage from './pages/Signin';
-import SignupPage from './pages/Signup';
+import SignPage from './pages/Sign';
 
 const root = document.querySelector('#root');
 
@@ -18,15 +22,15 @@ window.onload = function () {
   }
 
   if (window.location.pathname === '/signin') {
-    const signPage = new SigninPage();
+    const signPage = new SignPage();
 
-    root.innerHTML = signPage.compile();
+    root.innerHTML = signPage.compile(signinConfig);
   }
 
   if (window.location.pathname === '/signup') {
-    const signupPage = new SignupPage();
+    const signupPage = new SignPage();
 
-    root.innerHTML = signupPage.compile();
+    root.innerHTML = signupPage.compile(signupConfig);
   }
 
   if (window.location.pathname === '/not-found') {
