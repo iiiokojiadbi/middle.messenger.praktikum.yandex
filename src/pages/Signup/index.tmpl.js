@@ -1,6 +1,6 @@
 export const signupPageTemplate = `
-<div class="sign">
-  <div class="sign__content">
+<div class="container">
+  <div class="container__content sign">
     <h1 class="sign__header">Регистрация</h1>
     <form class="sign__form" action="#">
       <input
@@ -63,7 +63,7 @@ export const signupPageTemplate = `
         Зарегистрироваться
       </button>
     </form>
-    <a class="sign__redirect" href="/signin">Войти</a>
+    <a class="redirect sign__redirect" href="/signin">Войти</a>
   </div>
 </div>
 `;

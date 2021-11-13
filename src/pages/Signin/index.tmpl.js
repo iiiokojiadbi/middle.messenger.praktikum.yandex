@@ -1,6 +1,6 @@
 export const signinPageTemplate = `
-<div class="sign">
-  <div class="sign__content">
+<div class="container">
+  <div class="container__content sign">
     <img class="sign__logo" src="/assets/logo.png" alt="logo" />
     <h1 class="sign__header">Вход в чат</h1>
     <form class="sign__form" action="#">
@@ -24,7 +24,7 @@ export const signinPageTemplate = `
         Продолжить
       </button>
     </form>
-    <a class="sign__redirect" href="/signup">Зарегистрироваться</a>
+    <a class="redirect sign__redirect" href="/signup">Зарегистрироваться</a>
   </div>
 </div>
 `;

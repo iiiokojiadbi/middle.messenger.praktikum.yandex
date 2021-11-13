@@ -1,3 +1,5 @@
+import { internalErrorConfig, notFoundConfig } from './configs';
+import ErrorPage from './pages/Error';
 import SigninPage from './pages/Signin';
 import SignupPage from './pages/Signup';
 
@@ -9,15 +11,27 @@ window.onload = function () {
   }
 
   if (window.location.pathname === '/signin') {
-    const signPage = SigninPage.compile();
+    const signPage = new SigninPage();
 
-    root.innerHTML = signPage;
+    root.innerHTML = signPage.compile();
   }
 
   if (window.location.pathname === '/signup') {
-    const signupPage = SignupPage.compile();
+    const signupPage = new SignupPage();
 
-    root.innerHTML = signupPage;
+    root.innerHTML = signupPage.compile();
+  }
+
+  if (window.location.pathname === '/not-found') {
+    const errorPage = new ErrorPage();
+
+    root.innerHTML = errorPage.compile(notFoundConfig);
+  }
+
+  if (window.location.pathname === '/error') {
+    const errorPage = new ErrorPage();
+
+    root.innerHTML = errorPage.compile(internalErrorConfig);
   }
 };
 
