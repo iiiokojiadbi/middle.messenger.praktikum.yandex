@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean:output": "rimraf dist",
-    "start": "npm run clean:output && parcel static/index.html -p 3000 --https",
+    "start": "npm run clean:output && parcel static/index.html -p 3000",
     "build": "npm run clean:output && parcel build static/index.html --no-source-maps"
   },
   "repository": {
