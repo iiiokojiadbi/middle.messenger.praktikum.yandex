@@ -4,42 +4,44 @@ import {
   signinConfig,
   signupConfig,
 } from './configs';
+import { ROUTE } from './constants/route';
 import ChatPage from './pages/Chat';
 import ErrorPage from './pages/Error';
 import SignPage from './pages/Sign';
+import { pathname } from './utils/helpers';
 
 const root = document.querySelector('#root');
 
 window.onload = function () {
-  if (window.location.pathname === '/') {
-    window.location.pathname = '/signin';
+  if (pathname === ROUTE.ROOT) {
+    pathname = ROUTE.SIGN_IN;
   }
 
-  if (window.location.pathname === '/chat') {
+  if (pathname === ROUTE.CHAT) {
     const chatPage = new ChatPage();
 
     root.innerHTML = chatPage.compile();
   }
 
-  if (window.location.pathname === '/signin') {
+  if (pathname === ROUTE.SIGN_IN) {
     const signPage = new SignPage();
 
     root.innerHTML = signPage.compile(signinConfig);
   }
 
-  if (window.location.pathname === '/signup') {
+  if (pathname === ROUTE.SIGN_UP) {
     const signupPage = new SignPage();
 
     root.innerHTML = signupPage.compile(signupConfig);
   }
 
-  if (window.location.pathname === '/not-found') {
+  if (pathname === ROUTE.NOT_FOUND) {
     const errorPage = new ErrorPage();
 
     root.innerHTML = errorPage.compile(notFoundConfig);
   }
 
-  if (window.location.pathname === '/error') {
+  if (pathname === ROUTE.ERROR) {
     const errorPage = new ErrorPage();
 
     root.innerHTML = errorPage.compile(internalErrorConfig);

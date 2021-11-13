@@ -1,3 +1,5 @@
+import { ROUTE } from '../constants/route';
+
 export const signinConfig = {
   title: 'Вход в чат',
   inputs: [
@@ -18,7 +20,7 @@ export const signinConfig = {
   },
   redirect: {
     text: 'Зарегистрироваться',
-    to: '/signup',
+    to: ROUTE.SIGN_UP,
   },
 };
 
@@ -67,6 +69,6 @@ export const signupConfig = {
   },
   redirect: {
     text: 'Войти',
-    to: '/signin',
+    to: ROUTE.SIGN_IN,
   },
 };
