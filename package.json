@@ -22,7 +22,12 @@
   "devDependencies": {
     "handlebars": "^4.7.7",
     "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0",
     "sass": "^1.43.4"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "staticFiles": {
+    "staticPath": "static",
+    "staticOutDir": "dist"
+  }
 }

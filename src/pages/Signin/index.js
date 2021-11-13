@@ -1,6 +1,14 @@
-const root = document.querySelector('#root');
-const a = document.createElement('a');
-a.textContent = 'signin';
-a.setAttribute('href', '/app');
+import Handlebars from 'handlebars';
+import { signinPageTemplate } from './index.tmpl';
 
-root.appendChild(a);
+class SigninPage {
+  constructor() {
+    this.compiler = Handlebars.compile(signinPageTemplate);
+  }
+
+  compile() {
+    return this.compiler();
+  }
+}
+
+export default new SigninPage();
