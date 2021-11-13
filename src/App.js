@@ -1,11 +1,15 @@
-import styles from './styles.css';
+// const root = document.querySelector('#root');
 
-const root = document.querySelector('#root');
+// console.log(window.location);
 
-console.log(styles.test, styles);
+// if (window.location.pathname === '/signin') {
+// }
 
-const div = document.createElement('div');
-div.textContent = 'test';
-div.classList.add(styles.test);
+// if (window.location.pathname === '/') {
+//   const a = document.createElement('a');
+//   a.textContent = 'app';
 
-root.appendChild(div);
+//   a.setAttribute('href', '/signin');
+
+//   root.appendChild(a);
+// }
