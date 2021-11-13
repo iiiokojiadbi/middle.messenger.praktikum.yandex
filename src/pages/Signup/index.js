@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars';
-import { signupPageTemplate } from './index.tmpl.js';
+import { signupPageTemplate } from './index.tmpl';
 
 class SignupPage {
   constructor() {

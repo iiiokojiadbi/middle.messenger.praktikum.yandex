@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars';
-import { signinPageTemplate } from './index.tmpl.js';
+import { signinPageTemplate } from './index.tmpl';
 
 class SigninPage {
   constructor() {

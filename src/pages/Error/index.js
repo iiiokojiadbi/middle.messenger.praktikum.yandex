@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars';
-import { errorPageTemplate } from './index.tmpl.js';
+import { errorPageTemplate } from './index.tmpl';
 
 class ErrorPage {
   constructor() {
