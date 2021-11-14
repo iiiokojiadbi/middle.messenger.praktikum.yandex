@@ -8,13 +8,13 @@ import { ROUTE } from './constants/route';
 import ChatPage from './pages/Chat';
 import ErrorPage from './pages/Error';
 import SignPage from './pages/Sign';
-import { pathname } from './utils/helpers';
+import { pathname, setPathname } from './utils/helpers';
 
 const root = document.querySelector('#root');
 
 window.onload = function () {
   if (pathname === ROUTE.ROOT) {
-    pathname = ROUTE.SIGN_IN;
+    setPathname(ROUTE.SIGN_IN);
   }
 
   if (pathname === ROUTE.CHAT) {
