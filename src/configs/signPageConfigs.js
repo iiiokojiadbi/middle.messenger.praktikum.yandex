@@ -17,6 +17,7 @@ export const signinConfig = {
   submit: {
     type: 'submit',
     text: 'Продолжить',
+    to: ROUTE.CHAT,
   },
   redirect: {
     text: 'Зарегистрироваться',
@@ -66,6 +67,7 @@ export const signupConfig = {
   submit: {
     type: 'submit',
     text: 'Зарегистрироваться',
+    to: ROUTE.SIGN_IN,
   },
   redirect: {
     text: 'Войти',

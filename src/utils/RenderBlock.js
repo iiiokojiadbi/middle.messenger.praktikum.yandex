@@ -18,7 +18,7 @@ class RenderBlock {
   }
 
   setEventListener(pushHistory) {
-    const link = document.querySelectorAll('a');
+    const link = this.root.querySelectorAll('a');
 
     link.forEach((elem) =>
       elem.addEventListener('click', (e) => {
