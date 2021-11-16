@@ -9,3 +9,13 @@ export const ROUTE = {
   PROFILE_EDIT: '/profile/edit',
   PROFILE_CHANGE_PASSWORD: '/profile/password',
 };
+
+export const VALID_URL = {
+  ROOT: ROUTE.ROOT,
+  SIGN_IN: ROUTE.SIGN_IN,
+  SIGN_UP: ROUTE.SIGN_UP,
+  CHAT: ROUTE.CHAT,
+  NOT_FOUND: ROUTE.NOT_FOUND,
+  ERROR: ROUTE.ERROR,
+  PROFILE: ROUTE.PROFILE,
+};
