@@ -12,7 +12,45 @@
     <link rel="stylesheet" href="../src/styles/styles.scss" type="text/css" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="container">
+        <div class="container__content profile">
+          <img class="profile__logo" src="/assets/logo.png" alt="logo" />
+          <h3 class="profile__title">Иван</h3>
+          <p class="profile__row">
+            <span class="profile__label">Почта</span
+            ><span class="profile__value">pochta@yandex.ru</span>
+          </p>
+          <p class="profile__row">
+            <span class="profile__label">Логин</span
+            ><span class="profile__value">ivanivanov</span>
+          </p>
+          <p class="profile__row">
+            <span class="profile__label">Имя</span
+            ><span class="profile__value">Иван</span>
+          </p>
+          <p class="profile__row">
+            <span class="profile__label">Фамилия</span
+            ><span class="profile__value">Иванов</span>
+          </p>
+          <p class="profile__row">
+            <span class="profile__label">Имя в чате</span
+            ><span class="profile__value">Иван</span>
+          </p>
+          <p class="profile__row">
+            <span class="profile__label">Телефон</span
+            ><span class="profile__value">+7(999) 999-99-99</span>
+          </p>
+          <p class="profile__row profile__row_redirect">
+            <a class="redirect profile__edit" href="#">Изменить данные</a>
+          </p>
+          <p class="profile__row profile__row_redirect">
+            <a class="redirect profile__edit" href="#">Изменить пароль</a>
+          </p>
+          <a class="redirect profile__logout" href="#">Выйти</a>
+        </div>
+      </div>
+    </div>
     <script type="module" src="../src/App.js"></script>
   </body>
 </html>

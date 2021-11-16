@@ -22,7 +22,7 @@ const pages = {
 
 const router = new Router(pages);
 
-router.redirect(pathname, null, pathname);
+// router.redirect(pathname, null, pathname);
 
 if (module.hot) {
   module.hot.accept();
