@@ -3,26 +3,47 @@ import {
   notFoundConfig,
   signinConfig,
   signupConfig,
+  profileConfig,
+  profileEditInfoConfig,
+  profileChangePasswordConfig,
 } from './configs';
+import { pathname } from './utils/helpers';
 import { ROUTE } from './constants/route';
 import ChatPage from './pages/Chat';
 import ErrorPage from './pages/Error';
+import ProfilePage from './pages/Profile';
 import SignPage from './pages/Sign';
-import { pathname } from './utils/helpers';
 import Router from './utils/Router';
 
 const root = document.querySelector('#root');
+
+const chatPage = new ChatPage({ root, configs: {} });
+const signinPage = new SignPage({ root, configs: signinConfig });
+const signupPage = new SignPage({ root, configs: signupConfig });
+const errorPage = new ErrorPage({ root, configs: notFoundConfig });
+const notFoundPage = new ErrorPage({ root, configs: internalErrorConfig });
+const profilePage = new ProfilePage({
+  root,
+  configs: {
+    [ROUTE.PROFILE]: profileConfig,
+    [ROUTE.PROFILE_EDIT]: profileEditInfoConfig,
+    [ROUTE.PROFILE_CHANGE_PASSWORD]: profileChangePasswordConfig,
+  },
+});
+
 const pages = {
-  [ROUTE.CHAT]: new ChatPage({ root, config: {} }),
-  [ROUTE.SIGN_IN]: new SignPage({ root, config: signinConfig }),
-  [ROUTE.SIGN_UP]: new SignPage({ root, config: signupConfig }),
-  [ROUTE.NOT_FOUND]: new ErrorPage({ root, config: notFoundConfig }),
-  [ROUTE.ERROR]: new ErrorPage({ root, config: internalErrorConfig }),
+  [ROUTE.CHAT]: chatPage,
+  [ROUTE.SIGN_IN]: signinPage,
+  [ROUTE.SIGN_UP]: signupPage,
+  [ROUTE.NOT_FOUND]: errorPage,
+  [ROUTE.ERROR]: notFoundPage,
+  [ROUTE.PROFILE]: profilePage,
+  [ROUTE.PROFILE_EDIT]: profilePage,
 };
 
 const router = new Router(pages);
 
-// router.redirect(pathname, null, pathname);
+router.redirect(pathname, null, pathname);
 
 if (module.hot) {
   module.hot.accept();

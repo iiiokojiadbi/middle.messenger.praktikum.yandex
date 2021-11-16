@@ -19,7 +19,7 @@ class SignPage extends RenderBlock {
     submit.addEventListener('click', (e) => {
       e.preventDefault();
 
-      pushHistory(pathname, null, this.config.submit.to);
+      pushHistory(pathname, null, this.configs.submit.to);
     });
   }
 

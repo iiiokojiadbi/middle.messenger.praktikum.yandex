@@ -5,4 +5,7 @@ export const ROUTE = {
   CHAT: '/chat',
   NOT_FOUND: '/not-found',
   ERROR: '/error',
+  PROFILE: '/profile',
+  PROFILE_EDIT: '/profile/edit',
+  PROFILE_CHANGE_PASSWORD: '/profile/password',
 };

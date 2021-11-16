@@ -3,9 +3,9 @@ import Redirect from '../components/Redirect';
 import { pathname } from './helpers';
 
 class RenderBlock {
-  constructor({ root, config }) {
+  constructor({ root, configs }) {
     this.root = root;
-    this.config = config;
+    this.configs = configs;
     this.content = null;
 
     new Container();
@@ -13,7 +13,7 @@ class RenderBlock {
   }
 
   compile() {
-    this.content = this.compiler(this.config);
+    this.content = this.compiler(this.configs);
     return this;
   }
 

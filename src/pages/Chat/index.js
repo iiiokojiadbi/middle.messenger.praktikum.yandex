@@ -1,5 +1,4 @@
 import Handlebars from 'handlebars';
-import { pathname } from '../../utils/helpers';
 import RenderBlock from '../../utils/RenderBlock';
 import { chatPageTemplate } from './index.tmpl';
 

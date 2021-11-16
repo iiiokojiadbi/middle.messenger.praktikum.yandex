@@ -1,3 +1,6 @@
+import { ROUTE } from '../constants/route';
+import { pathname } from './helpers';
+
 class Router {
   constructor(pages) {
     this.pages = pages;
@@ -8,28 +11,49 @@ class Router {
     this.pushHistory(...args);
   };
 
-  pushHistory = (...args) => {
-    history.pushState(...args);
-    this.historyEventHandler(...args);
+  pushHistory = (state, props, to, skip = false) => {
+    history.pushState(state, props, to);
+
+    if (!skip) {
+      this.historyEventHandler(state, props, to);
+    }
   };
 
   init = () => {
     window.onpopstate = history.onpushstate = this.historyEventHandler;
   };
 
+  checkValidUrl = (url) => {
+    return Object.values(ROUTE).some((path) => path === url);
+  };
+
   historyEventHandler = (state, props, redirect) => {
     let link = redirect;
 
-    if (link === '/') {
-      link = '/chat';
+    if (['', '/'].includes(link)) {
+      link = ROUTE.CHAT;
     }
+
+    if (!this.checkValidUrl(link)) {
+      link = ROUTE.NOT_FOUND;
+    }
+
     const page = this.pages[link];
 
     try {
       page.compile().innerHTML(this.pushHistory);
+
+      if (props?.changeUrl) {
+        this.redirect(state, null, link);
+      }
     } catch (err) {
-      console.error('Непредвиденная ошибка');
-      console.error(err);
+      const parsedPathname = link.split('/');
+
+      const newPathname = parsedPathname.length
+        ? parsedPathname.slice(0, parsedPathname.length - 1).join('/')
+        : '/';
+
+      this.historyEventHandler(pathname, { changeUrl: true }, newPathname);
     }
   };
 }

@@ -39,17 +39,17 @@ export const signupConfig = {
       placeholder: 'Придумайте логин...',
     },
     {
-      name: 'name',
+      name: 'first_name',
       type: 'text',
       placeholder: 'Ваше имя...',
     },
     {
-      name: 'surname',
+      name: 'second_name',
       type: 'text',
       placeholder: 'Ваша фамилия...',
     },
     {
-      name: 'tel',
+      name: 'phone',
       type: 'text',
       placeholder: 'Номер телефона...',
     },
