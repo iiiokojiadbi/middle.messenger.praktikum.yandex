@@ -1,15 +1,18 @@
 import Handlebars from 'handlebars';
-import Partials from '../../components/Partials';
+import { pathname } from '../../utils/helpers';
+import RenderBlock from '../../utils/RenderBlock';
 import { signPageTemplate } from './index.tmpl';
 
-class SignPage extends Partials {
-  constructor() {
-    super();
+class SignPage extends RenderBlock {
+  constructor(data) {
+    super(data);
+
     this.compiler = Handlebars.compile(signPageTemplate);
   }
 
-  compile(config) {
-    return this.compiler(config);
+  innerHTML(pushHistory) {
+    super.innerHTML();
+    super.setEventListener(pushHistory);
   }
 }
 

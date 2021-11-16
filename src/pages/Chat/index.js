@@ -1,15 +1,18 @@
 import Handlebars from 'handlebars';
-import Partials from '../../components/Partials';
+import { pathname } from '../../utils/helpers';
+import RenderBlock from '../../utils/RenderBlock';
 import { chatPageTemplate } from './index.tmpl';
 
-class ChatPage extends Partials {
-  constructor() {
-    super();
+class ChatPage extends RenderBlock {
+  constructor(data) {
+    super(data);
+
     this.compiler = Handlebars.compile(chatPageTemplate);
   }
 
-  compile(config) {
-    return this.compiler(config);
+  innerHTML(pushHistory) {
+    super.innerHTML();
+    super.setEventListener(pushHistory);
   }
 }
 

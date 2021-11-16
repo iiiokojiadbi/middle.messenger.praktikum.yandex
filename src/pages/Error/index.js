@@ -1,15 +1,18 @@
 import Handlebars from 'handlebars';
-import Partials from '../../components/Partials';
+import { pathname } from '../../utils/helpers';
+import RenderBlock from '../../utils/RenderBlock';
 import { errorPageTemplate } from './index.tmpl';
 
-class ErrorPage extends Partials {
-  constructor() {
-    super();
+class ErrorPage extends RenderBlock {
+  constructor(data) {
+    super(data);
+
     this.compiler = Handlebars.compile(errorPageTemplate);
   }
 
-  compile(config) {
-    return this.compiler(config);
+  innerHTML(pushHistory) {
+    super.innerHTML();
+    super.setEventListener(pushHistory);
   }
 }
 
