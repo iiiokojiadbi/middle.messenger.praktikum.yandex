@@ -2,6 +2,7 @@ import { ROUTE } from '../../constants/route';
 
 const profilePageTemplate = `
 {{#> container class="profile" }}
+  {{> redirect class="redirect__temp" to="${ROUTE.CHAT}" text="Обратно в чат" }}
   <img class="profile__avatar" src="/assets/logo.png" alt="logo" />
   <h3 class="profile__title">Иван</h3>
   <p class="profile__row">
@@ -41,6 +42,7 @@ const profilePageTemplate = `
 
 const profileEditPageTemplate = `
 {{#> container class="profile" }}
+  {{> redirect class="redirect__temp" to="${ROUTE.CHAT}" text="Обратно в чат" }}
   <img class="profile__avatar" src="/assets/logo.png" alt="logo" />
   <form class="profile__form" action="#">
   {{#each inputs}}
