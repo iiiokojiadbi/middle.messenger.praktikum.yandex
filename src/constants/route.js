@@ -1,4 +1,5 @@
 export const ROUTE = {
+  EMPTY: '',
   ROOT: '/',
   SIGN_IN: '/signin',
   SIGN_UP: '/signup',
@@ -11,7 +12,6 @@ export const ROUTE = {
 };
 
 export const VALID_URL = {
-  ROOT: ROUTE.ROOT,
   SIGN_IN: ROUTE.SIGN_IN,
   SIGN_UP: ROUTE.SIGN_UP,
   CHAT: ROUTE.CHAT,
@@ -19,3 +19,5 @@ export const VALID_URL = {
   ERROR: ROUTE.ERROR,
   PROFILE: ROUTE.PROFILE,
 };
+
+export const SKIPPED_REDIRECTS_URL = [ROUTE.EMPTY, ROUTE.ROOT];

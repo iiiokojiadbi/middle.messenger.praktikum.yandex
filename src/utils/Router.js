@@ -1,4 +1,4 @@
-import { ROUTE, VALID_URL } from '../constants/route';
+import { ROUTE, SKIPPED_REDIRECTS_URL, VALID_URL } from '../constants/route';
 import { pathname } from './helpers';
 
 class Router {
@@ -10,7 +10,7 @@ class Router {
   redirect = (state, props, link) => {
     let to = link;
 
-    if (['', '/'].includes(to)) {
+    if (SKIPPED_REDIRECTS_URL.includes(to)) {
       to = ROUTE.CHAT;
     }
 
@@ -29,8 +29,6 @@ class Router {
     window.onpopstate = history.onpushstate = this.historyEventHandler;
   };
 
-  
-
   checkValidUrl = (url) => {
     return Object.values(VALID_URL).some((path) => path === url);
   };
@@ -41,10 +39,6 @@ class Router {
     }
 
     const path = Object.entries(VALID_URL).find(([key, value]) => {
-      if (value === ROUTE.ROOT) {
-        return false;
-      }
-
       return link.startsWith(value);
     });
 
@@ -55,7 +49,7 @@ class Router {
     let link = redirect;
     let canChangeUrl = props?.changeUrl;
 
-    if (['', '/'].includes(link)) {
+    if (SKIPPED_REDIRECTS_URL.includes(link)) {
       link = ROUTE.CHAT;
     }
 

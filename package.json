@@ -5,7 +5,7 @@
   "description": "### Откройте pull request в ветку main из ветки, где вы разрабатывали проект, и добавьте ссылку на этот pr в README.md в ветке main.  ### ВАЖНО: pull request должен называться “Sprint i” (i — номер спринта).",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel static/index.html -p 3000",
+    "dev": "parcel static/index.html --no-cache -p 3000",
     "build": "parcel build static/index.html --no-minify --no-source-maps",
     "server": "node ./server.js",
     "start": "npm run build && npm run server "
