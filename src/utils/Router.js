@@ -29,6 +29,8 @@ class Router {
     window.onpopstate = history.onpushstate = this.historyEventHandler;
   };
 
+  
+
   checkValidUrl = (url) => {
     return Object.values(VALID_URL).some((path) => path === url);
   };
@@ -43,7 +45,7 @@ class Router {
         return false;
       }
 
-      return link.startsWith(value) ? true : false;
+      return link.startsWith(value);
     });
 
     return path ? path[1] : ROUTE.NOT_FOUND;
