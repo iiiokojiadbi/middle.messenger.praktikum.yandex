@@ -1,0 +1,12 @@
+@import '../variables/styles.scss';
+
+.redirect {
+  font-size: 12px;
+  font-weight: 600;
+  color: $violet;
+  text-decoration: none;
+
+  &__temp {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "middle.messenger.praktikum.yandex",
+  "version": "0.0.1",
+  "engine": "^16.11.0",
+  "description": "### Откройте pull request в ветку main из ветки, где вы разрабатывали проект, и добавьте ссылку на этот pr в README.md в ветке main.  ### ВАЖНО: pull request должен называться “Sprint i” (i — номер спринта).",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel static/index.html --no-cache -p 3000",
+    "build": "parcel build static/index.html --no-minify --no-source-maps",
+    "server": "node ./server.js",
+    "start": "npm run build && npm run server "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iiiokojiadbi/middle.messenger.praktikum.yandex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iiiokojiadbi/middle.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/iiiokojiadbi/middle.messenger.praktikum.yandex#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "sass": "^1.43.4"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7"
+  },
+  "staticFiles": {
+    "staticPath": "static",
+    "staticOutDir": "dist"
+  }
+}

@@ -1,0 +1,21 @@
+@import '../variables/styles.scss';
+
+.input {
+  box-shadow: $shadowGray;
+  border-radius: 6px;
+  padding: 6px 10px;
+  border: none;
+  height: 36px;
+  cursor: pointer;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+  &:focus,
+  &:active {
+    border: none;
+    outline: none;
+    box-shadow: $shadowViolet;
+  }
+}
