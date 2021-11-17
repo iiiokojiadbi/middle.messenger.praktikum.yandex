@@ -10,8 +10,8 @@ class Router {
   redirect = (state, props, link) => {
     let to = link;
 
-    if (link[link.length - 1] === '/') {
-      to = link.slice(0, -1);
+    if (['', '/'].includes(to)) {
+      to = ROUTE.CHAT;
     }
 
     this.pushHistory(state, props, to);
