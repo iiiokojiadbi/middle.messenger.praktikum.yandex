@@ -8,7 +8,8 @@
     "dev": "parcel static/index.html --no-cache -p 3000",
     "build": "parcel build static/index.html --no-minify --no-source-maps",
     "server": "node ./server.js",
-    "start": "npm run build && npm run server "
+    "start": "npm run build && npm run server ", 
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -22,10 +23,16 @@
   },
   "homepage": "https://github.com/iiiokojiadbi/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.4.0",
     "express": "^4.17.1",
+    "husky": "^7.0.4",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-nuke-dist": "^1.0.1",
     "parcel-plugin-static-files-copy": "^2.6.0",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.2",
     "sass": "^1.43.4",
     "typescript": "^4.5.2"
   },
@@ -35,5 +42,11 @@
   "staticFiles": {
     "staticPath": "static",
     "staticOutDir": "dist"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx pretty-quick --staged ng lint ng test",
+      "pre-push": "ng build --aot true"
+    }
   }
 }
