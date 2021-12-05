@@ -8,7 +8,7 @@
     "dev": "parcel static/index.html --no-cache -p 3000",
     "build": "parcel build static/index.html --no-minify --no-source-maps",
     "server": "node ./server.js",
-    "start": "npm run build && npm run server ", 
+    "start": "npm run build && npm run server ",
     "prepare": "husky install"
   },
   "repository": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/iiiokojiadbi/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
+    "@types/node": "^16.11.11",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "eslint": "^8.4.0",
