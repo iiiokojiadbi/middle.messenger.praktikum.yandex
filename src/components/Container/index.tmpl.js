@@ -1,4 +1,4 @@
-export const containerTemplate = `
+export default `
 <div class="container">
   <div class="container__content {{ class }}">
     {{> @partial-block}}

@@ -1,14 +1,13 @@
 import Handlebars from 'handlebars';
-import { ROUTE } from '../../constants/route';
 import { pathname } from '../../utils/helpers';
 import RenderBlock from '../../utils/RenderBlock';
-import { signPageTemplate } from './index.tmpl';
+import template from './index.tmpl';
 
 class SignPage extends RenderBlock {
   constructor(data) {
     super(data);
 
-    this.compiler = Handlebars.compile(signPageTemplate);
+    this.compiler = Handlebars.compile(template);
   }
 
   setEventListener(pushHistory) {
