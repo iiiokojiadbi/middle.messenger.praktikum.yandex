@@ -1,13 +1,12 @@
 import Handlebars from 'handlebars';
-import { pathname } from '../../utils/helpers';
 import RenderBlock from '../../utils/RenderBlock';
-import { errorPageTemplate } from './index.tmpl';
+import template from './index.tmpl';
 
 class ErrorPage extends RenderBlock {
   constructor(data) {
     super(data);
 
-    this.compiler = Handlebars.compile(errorPageTemplate);
+    this.compiler = Handlebars.compile(template);
   }
 
   innerHTML(pushHistory) {

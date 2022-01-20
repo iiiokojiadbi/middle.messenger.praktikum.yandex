@@ -18,7 +18,7 @@ class Router {
   };
 
   pushHistory = (state, props, to, skip = false) => {
-    history.pushState(state, props, to);
+    window.history.pushState(state, props, to);
 
     if (!skip) {
       this.historyEventHandler(state, props, to);
@@ -26,21 +26,17 @@ class Router {
   };
 
   init = () => {
-    window.onpopstate = history.onpushstate = this.historyEventHandler;
+    window.onpopstate = window.history.onpushstate = this.historyEventHandler;
   };
 
-  checkValidUrl = (url) => {
-    return Object.values(VALID_URL).some((path) => path === url);
-  };
+  checkValidUrl = (url) => Object.values(VALID_URL).some((path) => path === url);
 
   getValidUrl = (link) => {
     if (!Object.values(ROUTE).includes(link)) {
       return ROUTE.NOT_FOUND;
     }
 
-    const path = Object.entries(VALID_URL).find(([key, value]) => {
-      return link.startsWith(value);
-    });
+    const path = Object.entries(VALID_URL).find(([, value]) => link.startsWith(value));
 
     return path ? path[1] : ROUTE.NOT_FOUND;
   };

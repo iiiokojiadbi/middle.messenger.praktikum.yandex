@@ -1,0 +1,14 @@
+# production
+/build
+/dist
+
+# library
+**/*.min.js
+
+# dependencies
+/node_modules
+
+# misc
+.DC_Store
+.cache
+.github

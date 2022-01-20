@@ -2,7 +2,7 @@ import Handlebars from 'handlebars';
 import { ROUTE } from '../../constants/route';
 import { pathname } from '../../utils/helpers';
 import RenderBlock from '../../utils/RenderBlock';
-import profileTemplates from './index.tmpl';
+import template from './index.tmpl';
 
 class ProfilePage extends RenderBlock {
   static selfRoutes = [
@@ -14,7 +14,7 @@ class ProfilePage extends RenderBlock {
   constructor(data) {
     super(data);
 
-    this.compiler = Handlebars.compile(profileTemplates[ROUTE.PROFILE]);
+    this.compiler = Handlebars.compile(template[ROUTE.PROFILE]);
   }
 
   setEventListener(pushHistory) {

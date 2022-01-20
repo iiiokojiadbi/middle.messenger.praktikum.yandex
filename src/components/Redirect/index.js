@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars';
-import { redirectTemplate } from './index.tmpl';
+import template from './index.tmpl';
 
 class Redirect {
   constructor() {
@@ -7,7 +7,7 @@ class Redirect {
   }
 
   register() {
-    Handlebars.registerPartial('redirect', redirectTemplate);
+    Handlebars.registerPartial('redirect', template);
   }
 }
 

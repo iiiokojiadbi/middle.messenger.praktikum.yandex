@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars';
-import { containerTemplate } from './index.tmpl';
+import template from './index.tmpl';
 
 class Container {
   constructor() {
@@ -7,7 +7,7 @@ class Container {
   }
 
   register() {
-    Handlebars.registerPartial('container', containerTemplate);
+    Handlebars.registerPartial('container', template);
   }
 }
 

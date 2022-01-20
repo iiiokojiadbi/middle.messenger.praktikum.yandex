@@ -1,4 +1,4 @@
-export const signPageTemplate = `
+export default `
 {{#> container class="sign" }}
   <img class="sign__logo" src="/assets/logo.png" alt="logo" />
   <h1 class="sign__header">{{ title }}</h1>

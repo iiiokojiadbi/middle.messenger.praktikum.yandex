@@ -1,6 +1,6 @@
 import { ROUTE } from '../../constants/route';
 
-export const chatPageTemplate = `
+export default `
 {{#> container class="chat" }}
     {{> redirect class="chat__redirect" to="${ROUTE.CHAT}" text="Кнопка, чтобы потыкать" }}
     {{> redirect class="chat__redirect" to="${ROUTE.NOT_FOUND}" text="Перейти на 404 страницу" }}
