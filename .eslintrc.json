@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": ["airbnb-base", "airbnb-typescript/base"],
   "parser": "@typescript-eslint/parser",
@@ -11,5 +12,9 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
-  "rules": {}
+  "rules": {
+    "class-methods-use-this": "off",
+    "no-multi-assign": "off",
+    "import/no-import-module-exports": "off"
+  }
 }
